@@ -14,6 +14,36 @@
 - **다양한 파일 형식 지원**: `.md`, `.docx`, `.txt`, `.pdf`, `.png` 등
 - **미확정 항목 관리**: 협의 필요 사항 체계적 추적
 - **핸드오프 체크리스트**: 역할별(UI Composer, Integrator, Verifier) 전달 사항
+- **서브에이전트 내장**: 6개 전문 에이전트가 자동 로드되어 작업 지원
+
+---
+
+## 서브에이전트
+
+> Clone 시 자동으로 로드되는 전문 AI 에이전트들
+
+| 에이전트 | 역할 | 자동 호출 조건 |
+|---------|------|---------------|
+| **lukuku-spec-owner** | 기술 스펙 전문가 | 스펙 문서 작성, 요구사항 정의 요청 시 |
+| **scope-guard** | 스코프 검증 | 요구사항 검토, 범위 검증 요청 시 |
+| **shopify-schema-architect** | Shopify 데이터 설계 | Metafield/Metaobject 설계 요청 시 |
+| **edge-case-hunter** | 엣지케이스 분석 | 기능 구현 후 실패 시나리오 분석 시 |
+| **wbs-orchestrator** | WBS 설계 | 스펙 확정 후 일정/태스크 분할 시 |
+| **ac-standardizer** | AC 표준화 | 모호한 요구사항을 측정 가능한 AC로 변환 시 |
+
+### 사용 방법
+
+**자동 호출**: 작업 내용에 맞는 에이전트가 자동으로 선택됩니다
+```
+"이 요구사항 검토해줘"  → scope-guard 자동 호출
+"엣지케이스 분석해줘"  → edge-case-hunter 자동 호출
+```
+
+**명시적 호출**: 특정 에이전트를 직접 지정할 수도 있습니다
+```
+"scope-guard 에이전트로 이 기능 분석해줘"
+"wbs-orchestrator로 일정 짜줘"
+```
 
 ---
 
@@ -24,6 +54,15 @@ spec-owner-kit/
 ├── README.md              # 이 파일
 ├── CLAUDE.md              # AI 작업 지시서 (핵심!)
 ├── TASKS.md               # Phase별 작업 체크리스트
+│
+├── .claude/               # Claude Code 설정
+│   └── agents/            # ⭐ 서브에이전트 (자동 로드)
+│       ├── lukuku-spec-owner.md
+│       ├── scope-guard.md
+│       ├── shopify-schema-architect.md
+│       ├── edge-case-hunter.md
+│       ├── wbs-orchestrator.md
+│       └── ac-standardizer.md
 │
 ├── inputs/                # 원본 자료 (여기에 자료 넣기)
 │   ├── INDEX.md           # ⭐ 파일 인벤토리 (AI 필수 확인)
