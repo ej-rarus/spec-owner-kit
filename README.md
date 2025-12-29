@@ -8,7 +8,7 @@
 
 ## ⚡ 원클릭 모드 (NEW!)
 
-**자료 넣고 → "원클릭 실행" → 5개 산출물 자동 생성**
+**자료 넣고 → "원클릭 실행" → 6개 산출물 자동 생성**
 
 ```bash
 # 1. inputs/ 폴더에 자료 넣기
@@ -67,6 +67,7 @@
 spec-owner-kit/
 ├── README.md              # 이 파일
 ├── CLAUDE.md              # AI 작업 지시서 (핵심!)
+├── ONECLICK.md            # ⚡ 원클릭 설정 가이드
 ├── TASKS.md               # Phase별 작업 체크리스트
 │
 ├── .claude/               # Claude Code 설정
@@ -80,6 +81,8 @@ spec-owner-kit/
 │
 ├── inputs/                # 원본 자료 (여기에 자료 넣기)
 │   ├── INDEX.md           # ⭐ 파일 인벤토리 (AI 필수 확인)
+│   ├── templates/         # 📋 산출물 템플릿
+│   ├── prompts/           # 빠른 시작 프롬프트
 │   ├── 회의록/
 │   ├── 요구사항/
 │   ├── 참고자료/
@@ -207,6 +210,7 @@ AI가 작업 전 반드시 수행하는 파일 인벤토리 확인:
 | WBS | 일정 및 태스크 관리 | `outputs/WBS.md` |
 | AC & Edge Case | 인수조건 & 예외처리 | `outputs/AC_EdgeCase.md` |
 | 용어정의서 | Glossary | `outputs/용어정의서.md` |
+| 견적서 | 프로젝트 견적 (HTML) | `outputs/견적서.html` |
 
 ---
 
