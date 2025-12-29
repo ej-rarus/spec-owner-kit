@@ -2,6 +2,33 @@
 
 This file provides guidance to Claude Code when working as a **Spec Owner** on this project.
 
+---
+
+## ⚡ 원클릭 모드 (ONECLICK MODE)
+
+> **"원클릭 실행"** 명령 시 아래 프로세스 자동 수행
+> 상세 설정: [ONECLICK.md](./ONECLICK.md)
+
+### 트리거 키워드
+`"원클릭"`, `"원클릭 실행"`, `"전체 생성"`, `"한번에 만들어줘"`, `"inputs 기반으로 ... 한번에"`
+
+### 자동 수행 (확인 없이 진행)
+```
+STEP 1: inputs/ 전체 스캔 → INDEX.md 생성
+STEP 2: 모든 파일 분석 → 미확정은 기본값 적용
+STEP 3: 산출물 5개 자동 생성 → outputs/
+STEP 4: 일관성 검증 → 완료 리포트
+```
+
+### 생성 산출물
+- `outputs/기능정의서.md`
+- `outputs/화면정의서.md`
+- `outputs/WBS.md`
+- `outputs/AC_EdgeCase.md`
+- `outputs/용어정의서.md`
+
+---
+
 ## 🎯 역할: Spec Owner
 
 > **Spec Owner**는 제품의 **논리적 무결성**과 프로젝트의 **적기 인도**를 책임지는 역할이다.
@@ -33,25 +60,25 @@ This file provides guidance to Claude Code when working as a **Spec Owner** on t
 ```
 이 프로젝트/
 ├── CLAUDE.md              # AI 작업 지시서 (이 파일)
+├── ONECLICK.md            # 원클릭 설정 가이드
 ├── TASKS.md               # Spec Owner 작업 체크리스트
 │
-├── inputs/                # 📥 원본 자료 (실제 데이터만)
+├── inputs/                # 📥 원본 자료 + 템플릿
 │   ├── INDEX.md           # ⭐ 입력 파일 인벤토리 (필수)
-│   ├── 회의록/            # 고객 미팅 기록
-│   ├── 요구사항/          # 고객 요청, 기능 목록
-│   ├── 참고자료/          # 벤치마킹, 스크린샷
-│   └── 미확정항목/        # 협의 필요 항목 추적
+│   ├── prompts/           # 빠른 시작 프롬프트
+│   │   └── QUICKSTART.md
+│   ├── templates/         # 📋 문서 형식 (참조용)
+│   │   ├── 기능정의서-lite.md
+│   │   ├── 화면정의서-lite.md
+│   │   ├── WBS-lite.md
+│   │   ├── AC_EdgeCase-lite.md
+│   │   ├── 용어정의서-lite.md
+│   │   └── 견적서_템플릿.html
+│   └── (프로젝트 자료)     # 회의록, 요구사항 등 직접 추가
 │
-├── outputs/               # 📤 Spec Owner 산출물
-│   ├── 기능정의서.md      # Fixed PRD
-│   ├── 화면정의서.md      # UI 상세 정의
-│   ├── WBS.md             # 일정 및 태스크
-│   ├── AC_EdgeCase.md     # 인수조건 & 예외처리
-│   └── 용어정의서.md      # Glossary
+├── outputs/               # 📤 Spec Owner 산출물 (자동 생성)
 │
-├── _samples/              # 📋 샘플 파일 (참고용, 작업에서 제외)
-│
-└── templates/             # 📋 문서 형식 (참조용)
+└── _samples/              # 📋 샘플 파일 (참고용, 작업에서 제외)
 ```
 
 ---
