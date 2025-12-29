@@ -51,8 +51,8 @@ OUTPUTS:
   - 화면정의서      # 필수
   - WBS            # 필수
   - AC_EdgeCase    # 필수
-  - 용어정의서      # 선택
-  - 견적서         # 선택 (MD_RATE 필요)
+  - 용어정의서      # 필수
+  - 견적서         # 필수 (MD_RATE 설정 권장)
 ```
 
 ---
@@ -125,7 +125,7 @@ ROLE_DEFAULTS:
 │ • outputs/AC_EdgeCase.md                                        │
 │ • outputs/용어정의서.md                                          │
 │ • outputs/WBS.md                                                │
-│ • outputs/견적서.html (선택)                                     │
+│ • outputs/견적서.html                                            │
 └─────────────────────────────────────────────────────────────────┘
                               │
                               ▼
@@ -148,7 +148,7 @@ ROLE_DEFAULTS:
 | `outputs/WBS.md` | 작업 분할 구조 + Gantt | ~80줄 |
 | `outputs/AC_EdgeCase.md` | 인수조건 & 예외처리 | ~60줄 |
 | `outputs/용어정의서.md` | 용어 Glossary | ~40줄 |
-| `outputs/견적서.html` | 견적서 (선택) | HTML |
+| `outputs/견적서.html` | 견적서 | HTML |
 
 ---
 
@@ -184,7 +184,7 @@ ROLE_DEFAULTS:
 4. AC_EdgeCase.md 생성 → outputs/
 5. 용어정의서.md 생성 → outputs/
 6. WBS.md 생성 → outputs/
-7. (견적서 - 설정 시) 견적서.html 생성 → outputs/
+7. 견적서.html 생성 → outputs/
 
 ## STEP 4: 검증
 1. 산출물 간 ID/용어 일관성 확인
