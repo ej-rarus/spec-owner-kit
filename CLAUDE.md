@@ -4,13 +4,13 @@ This file provides guidance to Claude Code when working as a **Spec Owner** on t
 
 ---
 
-## ⚡ 원클릭 모드 (ONECLICK MODE)
+## ⚡ AUTOSPEC 모드
 
-> **"원클릭 실행"** 명령 시 아래 프로세스 자동 수행
-> 상세 설정: [ONECLICK.md](./ONECLICK.md)
+> **"AUTOSPEC 실행"** 명령 시 아래 프로세스 자동 수행
+> 상세 설정: [AUTOSPEC.md](./AUTOSPEC.md)
 
 ### 트리거 키워드
-`"원클릭"`, `"원클릭 실행"`, `"전체 생성"`, `"한번에 만들어줘"`, `"inputs 기반으로 ... 한번에"`
+`"AUTOSPEC"`, `"AUTOSPEC 실행"`, `"전체 생성"`, `"한번에 만들어줘"`, `"inputs 기반으로 ... 한번에"`
 
 ### 자동 수행 (확인 없이 진행)
 ```
@@ -60,7 +60,7 @@ STEP 4: 일관성 검증 → 완료 리포트
 ```
 이 프로젝트/
 ├── CLAUDE.md              # AI 작업 지시서 (이 파일)
-├── ONECLICK.md            # 원클릭 설정 가이드
+├── AUTOSPEC.md            # AUTOSPEC 설정 가이드
 ├── TASKS.md               # Spec Owner 작업 체크리스트
 │
 ├── inputs/                # 📥 원본 자료 + 템플릿

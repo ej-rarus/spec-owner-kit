@@ -6,17 +6,17 @@
 
 ---
 
-## ⚡ 원클릭 모드 (NEW!)
+## ⚡ AUTOSPEC 모드 (NEW!)
 
-**자료 넣고 → "원클릭 실행" → 6개 산출물 자동 생성**
+**자료 넣고 → "AUTOSPEC 실행" → 전체 산출물 자동 생성**
 
 ```bash
 # 1. inputs/ 폴더에 자료 넣기
 # 2. Claude에게 명령
-"원클릭 실행"
+"AUTOSPEC 실행"
 ```
 
-👉 상세 설정: [ONECLICK.md](./ONECLICK.md)
+👉 상세 설정: [AUTOSPEC.md](./AUTOSPEC.md)
 
 ---
 
@@ -28,7 +28,7 @@
 - **다양한 파일 형식 지원**: `.md`, `.docx`, `.txt`, `.pdf`, `.png` 등
 - **미확정 항목 관리**: 협의 필요 사항 체계적 추적
 - **핸드오프 체크리스트**: 역할별(UI Composer, Integrator, Verifier) 전달 사항
-- **서브에이전트 내장**: 6개 전문 에이전트가 자동 로드되어 작업 지원
+- **서브에이전트 내장**: 7개 전문 에이전트가 자동 로드되어 작업 지원
 
 ---
 
@@ -44,6 +44,7 @@
 | **edge-case-hunter** | 엣지케이스 분석 | 기능 구현 후 실패 시나리오 분석 시 |
 | **wbs-orchestrator** | WBS 설계 | 스펙 확정 후 일정/태스크 분할 시 |
 | **ac-standardizer** | AC 표준화 | 모호한 요구사항을 측정 가능한 AC로 변환 시 |
+| **tc-generator** | TC 시트 생성 | QA 핸드오프용 TC 시트 요청 시 |
 
 ### 사용 방법
 
@@ -67,7 +68,7 @@
 spec-owner-kit/
 ├── README.md              # 이 파일
 ├── CLAUDE.md              # AI 작업 지시서 (핵심!)
-├── ONECLICK.md            # ⚡ 원클릭 설정 가이드
+├── AUTOSPEC.md            # ⚡ AUTOSPEC 설정 가이드
 ├── TASKS.md               # Phase별 작업 체크리스트
 │
 ├── .claude/               # Claude Code 설정
@@ -77,7 +78,8 @@ spec-owner-kit/
 │       ├── shopify-schema-architect.md
 │       ├── edge-case-hunter.md
 │       ├── wbs-orchestrator.md
-│       └── ac-standardizer.md
+│       ├── ac-standardizer.md
+│       └── tc-generator.md    # NEW: TC 시트 생성
 │
 ├── inputs/                # 원본 자료 (여기에 자료 넣기)
 │   ├── INDEX.md           # ⭐ 파일 인벤토리 (AI 필수 확인)
@@ -211,6 +213,7 @@ AI가 작업 전 반드시 수행하는 파일 인벤토리 확인:
 | AC & Edge Case | 인수조건 & 예외처리 | `outputs/AC_EdgeCase.md` |
 | 용어정의서 | Glossary | `outputs/용어정의서.md` |
 | 견적서 | 프로젝트 견적 (HTML) | `outputs/견적서.html` |
+| TC 시트 | QA 테스트케이스 (선택) | `outputs/TC_시트/` |
 
 ---
 
